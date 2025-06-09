@@ -14,7 +14,7 @@ import VictimDashboard from "./pages/VictimDashboard";
 import LoginPage from "./pages/Login";
 import AboutUs from "./pages/About";
 
-function App() {
+function HeroSection() {
   const navigate = useNavigate();
 
   const handleVolunteerClick = () => navigate("/volunteer");
@@ -22,6 +22,43 @@ function App() {
   const handleVictimClick = () => navigate("/victim");
   const handleRequestAidClick = () => navigate("/request-aid");
 
+  return (
+    <section className="hero">
+      <h1 className="hero-heading">
+        Connecting you to <span className="gradient-text">help</span>
+        <br />
+        in times of <span className="gradient-text">crisis</span>
+        <span className="dot">.</span>
+      </h1>
+      <p className="hero-subtext">
+        A platform to connect disaster victims with volunteers and organizations
+        for timely aid.
+      </p>
+      <div className="cta-group">
+        <button className="cta-button volunteer" onClick={handleVolunteerClick}>
+          Volunteer
+        </button>
+        <button className="cta-button victim" onClick={handleVictimClick}>
+          Victim
+        </button>
+        <button
+          className="cta-button organization"
+          onClick={handleOrganizationClick}
+        >
+          Organization
+        </button>
+      </div>
+      <div className="cta-group secondary">
+        <button className="cta-button request" onClick={handleRequestAidClick}>
+          Request Aid
+        </button>
+        <button className="cta-button locate">Locate Disaster</button>
+      </div>
+    </section>
+  );
+}
+
+function App() {
   return (
     <div className="app-container">
       <header className="main-header">
@@ -42,46 +79,8 @@ function App() {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1 className="hero-heading">
-          Connecting you to <span className="gradient-text">help</span>
-          <br />
-          in times of <span className="gradient-text">crisis</span>
-          <span className="dot">.</span>
-        </h1>
-        <p className="hero-subtext">
-          A platform to connect disaster victims with volunteers and
-          organizations for timely aid.
-        </p>
-        <div className="cta-group">
-          <button
-            className="cta-button volunteer"
-            onClick={handleVolunteerClick}
-          >
-            Volunteer
-          </button>
-          <button className="cta-button victim" onClick={handleVictimClick}>
-            Victim
-          </button>
-          <button
-            className="cta-button organization"
-            onClick={handleOrganizationClick}
-          >
-            Organization
-          </button>
-        </div>
-        <div className="cta-group secondary">
-          <button
-            className="cta-button request"
-            onClick={handleRequestAidClick}
-          >
-            Request Aid
-          </button>
-          <button className="cta-button locate">Locate Disaster</button>
-        </div>
-      </section>
-
       <Routes>
+        <Route path="/" element={<HeroSection />} />
         <Route path="/volunteer" element={<VolunteerDashboard />} />
         <Route path="/organization" element={<OrganizationDashboard />} />
         <Route path="/victim" element={<VictimDashboard />} />
