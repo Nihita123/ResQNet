@@ -1,46 +1,39 @@
+/* src/App.css */
 
-/* Import Tailwind CSS */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fenix&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* App.css */
 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #1f2937;
 }
 
-.App {
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header styles - apply to all pages */
-.app-header {
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  padding: 20px 40px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 1.5rem 3rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.header-left h1 {
-  margin: 0;
+.logo {
   font-size: 1.8rem;
-
+  font-weight: 700;
+  color: #3b82f6;
 }
 
 .nav-links {
@@ -49,103 +42,73 @@ body {
   align-items: center;
 }
 
-.header-nav {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  padding: 0;
-  margin: 0;
-}
-
-.header-nav li {
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.header-nav li:hover {
-  color: #bbb;
-}
-
-.header-nav a {
-  color: inherit;
+.nav-link {
   text-decoration: none;
+  font-weight: 500;
+  color: #1f2937;
+  transition: color 0.3s ease;
 }
 
-.header-nav a:hover {
-  color: #ff6b35;
+.nav-link:hover {
+  color: #6366f1;
 }
 
-/* Main content wrapper */
-.main-content {
-  flex: 1;
-  padding-top: 80px;
-  /* Account for fixed header */
-}
-
-/* Home page specific styles */
-.home-wrapper {
-  background-color: #121212;
+.login-btn {
+  background-color: #6366f1;
   color: white;
-  min-height: calc(100vh - 80px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.home-wrapper .hero-section {
+.hero {
   text-align: center;
-  background-image: url("https://plus.unsplash.com/premium_photo-1663045423469-aade0c24bd6a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: cover;
-  background-position: center;
-  height: calc(100vh - 80px);
+  padding: 6rem 2rem 4rem;
+  background-color: #f9fafb;
+}
+
+.hero-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.3rem;
+  font-weight: 730;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dot {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.hero-subtext {
+  color: #6b7280;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-group {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.home-wrapper .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.home-wrapper .hero-content {
-  text-align: center;
-  padding: 40px;
-  border-radius: 10px;
-  z-index: 2;
-  position: relative;
-}
-
-.home-wrapper .hero-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.home-wrapper .hero-tagline {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #bbb;
-}
-
-.home-wrapper .cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.home-wrapper .cta-button {
-  background-color: transparent;
-  color: white;
-  border: 1.5px solid white;
-  border-radius: 2px;
-  padding: 15px 30px;
+.cta-group.secondary {
+  gap: 1rem;
+}
 
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 3px;
+  font-weight: 600;
   font-size: 1rem;
   border: 2px solid transparent;
   background-color: transparent;
@@ -153,109 +116,46 @@ body {
   transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-
-.home-wrapper .cta-button:hover {
-  background-color: #444;
-  border-color: #666;
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.home-wrapper .extra-buttons {
+/* Purple outline for main buttons */
+.volunteer,
+.victim,
+.organization {
+  border-color: #7c3aed; /* purple-600 */
+  color: #7c3aed;
+}
+
+/* Red outline for secondary buttons */
+.request,
+.locate {
+  border-color: #dc2626; /* red-600 */
+  color: #dc2626;
+}
+
+.footer {
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 18px;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.home-wrapper .report-disaster,
-.home-wrapper .locate-disaster {
-  background-color: transparent;
-  color: #e74c3c;
-  border: 1.5px solid #e74c3c;
-  border-radius: 2px;
-  padding: 15px 42px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.footer-links a {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
 
-.home-wrapper .report-disaster:hover,
-.home-wrapper .locate-disaster:hover {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
-  color: white;
-}
-
-/* About page and other pages - ensure they have proper styling */
-.about-page {
-  background-color: white;
-  color: #333;
-  min-height: calc(100vh - 80px);
-
-}
-
-/* Animation classes for About page */
-@keyframes fade-in-down {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-down {
-  animation: fade-in-down 1s ease-out;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out 0.3s both;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .app-header {
-    padding: 15px 20px;
-  }
-
-  .header-nav {
-    gap: 15px;
-  }
-
-  .header-nav li {
-    font-size: 1rem;
-  }
-
-  .home-wrapper .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .home-wrapper .hero-tagline {
-    font-size: 1.2rem;
-  }
-
-  .home-wrapper .cta-buttons,
-  .home-wrapper .extra-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .home-wrapper .cta-button {
-    width: 200px;
-  }
+.footer-links a:hover {
+  color: #4f46e5;
 }
