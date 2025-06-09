@@ -73,8 +73,17 @@ function App() {
         </main>
       </div>
     </Router>
+
+
   );
 }
 
-// Remove AppWrapper and export App directly
-export default App;
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
+
+export default AppWrapper;
