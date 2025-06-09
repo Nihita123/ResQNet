@@ -1,4 +1,4 @@
-.about-container {
+/* .about-container {
   min-height: 100vh;
   background-color: transparent;
   display: flex;
@@ -12,8 +12,8 @@
   max-width: 1100px;
   background-color: transparent;
   padding: 40px;
-  border-radius: 10px;
-  color: #2a2a2a;
+  /* border-radius: 10px; */
+/* color: #2a2a2a;
   line-height: 1.7;
 }
 
@@ -44,4 +44,4 @@
 
 .about-content li {
   margin-bottom: 8px;
-}
+} */
