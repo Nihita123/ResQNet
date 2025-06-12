@@ -13,6 +13,7 @@ import OrganizationDashboard from "./pages/OrganisationDashboard";
 import VictimDashboard from "./pages/VictimDashboard";
 import LoginPage from "./pages/Login";
 import AboutUs from "./pages/About";
+import Home from "./pages/home";
 
 function HeroSection() {
   const navigate = useNavigate();
@@ -80,7 +81,7 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+        <Route path="/" element={<Home />} />
         <Route path="/volunteer" element={<VolunteerDashboard />} />
         <Route path="/organization" element={<OrganizationDashboard />} />
         <Route path="/victim" element={<VictimDashboard />} />
